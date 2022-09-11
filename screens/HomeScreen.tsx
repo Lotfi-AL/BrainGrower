@@ -10,7 +10,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={()=>{nav.navigate("SwitchGame")}}><Image source={require("./bigBrain.png")}/></TouchableOpacity>
+      <TouchableOpacity onPress={()=>{nav.navigate("SwitchGame")}}><Image source={require("../assets/images/bigBrain.png")}/></TouchableOpacity>
     </View>
   );
 }
