@@ -2,7 +2,6 @@ import { useNavigation } from "@react-navigation/native"
 import { StyleSheet, Image, TouchableOpacity } from "react-native"
 
 import { Text, View } from "../components/Themed"
-//import bigBrain from "./bigBrain.png";
 
 export default function HomeScreen() {
   const nav = useNavigation()
