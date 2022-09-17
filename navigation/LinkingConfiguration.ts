@@ -10,15 +10,15 @@ import * as Linking from "expo-linking"
 import { RootStackParamList } from "../types"
 
 const linking: LinkingOptions<RootStackParamList> = {
-    prefixes: [Linking.createURL("/")],
-    config: {
-        screens: {
-            Home: "Home",
-            SwitchGame: "SwitchGame",
-            Modal: "modal",
-            NotFound: "*",
-        },
+  prefixes: [Linking.createURL("/")],
+  config: {
+    screens: {
+      Home: "Home",
+      SwitchGame: "SwitchGame",
+      Modal: "modal",
+      NotFound: "*",
     },
+  },
 }
 
 export default linking
