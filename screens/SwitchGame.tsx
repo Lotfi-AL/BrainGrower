@@ -51,11 +51,6 @@ export default function SwitchGameScreen() {
     true,
   ])
 
-  console.log(startSymbols)
-  gameMatrix.forEach(e => console.log(e))
-  console.log(endSymbols)
-  console.log(correctPath)
-
   return (
     <View>
       <Text>PLACEHOLDER</Text>
