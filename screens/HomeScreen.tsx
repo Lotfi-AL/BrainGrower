@@ -14,8 +14,8 @@ export default function HomeScreen() {
         }}
       >
         <Image
+          style={styles.image}
           source={require("../assets/images/bigBrain.png")}
-          style={styles.logo}
         />
       </TouchableOpacity>
     </View>
@@ -23,6 +23,10 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  image: {
+    width: 100,
+    height: 100,
+  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -36,9 +40,5 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: "80%",
-  },
-  logo: {
-    height: 256,
-    width: 256,
   },
 })
