@@ -1,4 +1,5 @@
-import { Text, View } from "../components/Themed"
+import SymbolRow from "./components/SymbolRow"
+import { Text, View } from "../../components/Themed"
 
 function generateNumberbox(): number[] {
   let array = [1, 2, 3, 4]
@@ -53,6 +54,7 @@ export default function SwitchGameScreen() {
 
   return (
     <View>
+      <SymbolRow />
       <Text>PLACEHOLDER</Text>
     </View>
   )

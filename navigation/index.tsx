@@ -20,7 +20,7 @@ import { Button, ColorSchemeName, Pressable } from "react-native"
 import Colors from "../constants/Colors"
 
 import HomeScreen from "../screens/HomeScreen"
-import SwitchGame from "../screens/SwitchGame"
+import SwitchGame from "../screens/SwitchGame/SwitchGame"
 import LinkingConfiguration from "./LinkingConfiguration"
 
 export default function Navigation({
