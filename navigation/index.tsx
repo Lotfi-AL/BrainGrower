@@ -3,62 +3,73 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
+import { Ionicons } from "@expo/vector-icons"
 import { FontAwesome } from "@expo/vector-icons"
+import { Entypo } from "@expo/vector-icons"
+import { AntDesign } from "@expo/vector-icons"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import {
-    NavigationContainer,
-    DefaultTheme,
-    DarkTheme,
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+  useNavigation,
 } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import * as React from "react"
-import { ColorSchemeName, Pressable } from "react-native"
-
+import { Button, ColorSchemeName, Pressable } from "react-native"
 import Colors from "../constants/Colors"
-import useColorScheme from "../hooks/useColorScheme"
-import ModalScreen from "../screens/ModalScreen"
-import NotFoundScreen from "../screens/NotFoundScreen"
+
 import HomeScreen from "../screens/HomeScreen"
-import TabOneScreen from "../screens/TabOneScreen"
-import TabTwoScreen from "../screens/TabTwoScreen"
-import {
-    RootStackParamList,
-    RootTabParamList,
-    RootTabScreenProps,
-} from "../types"
+import SwitchGame from "../screens/SwitchGame"
 import LinkingConfiguration from "./LinkingConfiguration"
-import { Topbar } from "../components/Topbar"
 
 export default function Navigation({
-    colorScheme,
+  colorScheme,
 }: {
-    colorScheme: ColorSchemeName
+  colorScheme: ColorSchemeName
 }) {
-    7
+  7
 
-    const Stack = createNativeStackNavigator()
+  const Stack = createNativeStackNavigator()
 
-    return (
-        <NavigationContainer
-            linking={LinkingConfiguration}
-            theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-        >
-            <Stack.Navigator
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: "#1D3557",
-                    },
-                    headerTintColor: "red",
-                }}
-            >
-                <Stack.Screen
-                    name="Home"
-                    component={HomeScreen}
-                    options={{ headerTitle: props => <Topbar /> }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
+  return (
+    <NavigationContainer
+      linking={LinkingConfiguration}
+      theme={colorScheme === "dark" ? DarkTheme : DarkTheme}
+    >
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleAlign: "center",
+          headerTintColor: Colors.yellow,
+          headerStyle: {
+            backgroundColor: Colors.darkblue,
+          },
+        }}
+      >
+        <Stack.Screen
+          name="Home"
+          options={({ navigation, route }) => ({
+            headerTitle: "Home",
+            headerRight: () => (
+              <AntDesign name="user" size={24} color={Colors.yellow} />
+            ),
+          })}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          options={{
+            headerTitle: "SwitchGame",
+            headerRight: () => (
+              <AntDesign name="user" size={24} color={Colors.yellow} />
+            ),
+            animation: "slide_from_right",
+          }}
+          name="SwitchGame"
+          component={SwitchGame}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 /**
